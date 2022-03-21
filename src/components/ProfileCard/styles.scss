@@ -1,0 +1,63 @@
+@use '../../styles/styles.scss' as *;
+
+.profile {
+    max-width: 26.5rem;
+    position: relative;
+    background-color: $bg-card;
+    border-bottom-left-radius: $radius;
+    border-bottom-right-radius: $radius;
+
+    &__intro {
+        padding: 3.2rem 2.8rem 8rem;
+        background-color: $bg-profile;
+        border-radius: $radius;
+
+        &__avatar {
+            width: 8rem;
+            height: 8rem;
+            margin-bottom: 4rem;
+            border: 3px solid $white;
+            border-radius: 50%;
+        }
+
+        &__span {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: $pale-blue;
+        }
+
+        &__name {
+            margin-top: .4rem;
+            font-size: 4rem;
+            font-weight: 300;
+            color: $white;
+        }
+    }
+
+    &__nav {
+        padding: 2.8rem 3.6rem 3.6rem 3.6rem;
+
+        &__list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            
+        }
+
+        &__link {
+            font-size: 1.8rem;
+            color: $desaturated-blue;
+            transition: color .2s;
+    
+            &:hover {
+                color: $white;
+            }
+
+        }
+        
+        .active {
+            color: $white;
+        }
+    }
+    
+}

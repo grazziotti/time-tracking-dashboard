@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&family=Rubik:wght@300;400;500&display=swap');
 
-*
+*,
 *::before,
 *::after {
     margin: 0;
@@ -44,4 +44,12 @@ input {
     border: 0;
     outline: 0;
     background-color: transparent;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    max-width: 111rem;
+    min-height: 100vh;
+    margin: auto;
 }
