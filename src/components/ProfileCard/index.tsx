@@ -1,12 +1,26 @@
-import './styles.scss'
-import profileImage from '../../assets/image-jeremy.png'
+import React from 'react';
+import { timeframeType } from '../../types/timeframeType';
 
-export const ProfileCard = () => {
+import './styles.scss'
+
+type Props = {
+    activeTimeframe: timeframeType;
+    onTimeframeChange: (activeTimeframe: timeframeType) => void;
+}
+
+export const ProfileCard = ({ activeTimeframe, onTimeframeChange }: Props) => {
+    const handleClickedLink = (e: React.MouseEvent) => {
+        const selectedOption = e.currentTarget.getAttribute('data-option') as timeframeType
+        onTimeframeChange(selectedOption)
+    }
+
+    const checkActiveTimeframe = (s: string) => activeTimeframe === s ? 'active' : ''
+
     return (
         <div className="profile">
             <div className="profile__intro"> 
                 <div className="profile__intro__avatar">
-                    <img src={profileImage} alt="avatar" />
+                    <img src="./images/image-jeremy.png" alt="avatar" />
                 </div>
                 <div className="profile__intro__text">
                     <span className="profile__intro__span">Report for</span>
@@ -16,13 +30,28 @@ export const ProfileCard = () => {
             <nav className="profile__nav">
                 <ul className="profile__nav__list">
                     <li className="profile__nav__item">
-                        <a href="#" className="profile__nav__link">Daily</a>
+                        <a 
+                            href="#" 
+                            className={`profile__nav__link ${checkActiveTimeframe('daily')}`}
+                            data-option="daily"
+                            onClick={handleClickedLink}
+                        >Daily</a>
                     </li>
                     <li className="profile__nav__item">
-                        <a href="#" className="profile__nav__link active">Weekly</a>
+                        <a 
+                            href="#" 
+                            className={`profile__nav__link ${checkActiveTimeframe('weekly')}`}
+                            data-option="weekly"
+                            onClick={handleClickedLink}
+                        >Weekly</a>
                     </li>
                     <li className="profile__nav__item">
-                        <a href="#" className="profile__nav__link">Monthly</a>
+                        <a 
+                            href="#" 
+                            className={`profile__nav__link ${checkActiveTimeframe('monthly')}`}
+                            data-option="monthly"
+                            onClick={handleClickedLink}
+                        >Monthly</a>
                     </li>
                 </ul>
             </nav>

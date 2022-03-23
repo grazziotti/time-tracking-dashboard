@@ -4,8 +4,7 @@
     max-width: 26.5rem;
     position: relative;
     background-color: $bg-card;
-    border-bottom-left-radius: $radius;
-    border-bottom-right-radius: $radius;
+    border-radius: $radius;
 
     &__intro {
         padding: 3.2rem 2.8rem 8rem;

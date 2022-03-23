@@ -1,13 +1,6 @@
-type timeFrameValue = {
-    current: number;
-    previous: number;
-}
+import { timeframesType } from "./timeframesType";
 
 export type dataType = {
     title: string;
-    timeframes: {
-      daily: timeFrameValue;
-      weekly: timeFrameValue;
-      monthly: timeFrameValue;
-    }
+    timeframes: timeframesType
 }

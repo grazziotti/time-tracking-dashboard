@@ -1,0 +1,82 @@
+@use '../../styles/styles' as *;
+
+
+.card {
+    border-radius: $radius;
+    width: 100%;
+    height: 24.5rem;
+
+    &--work {
+        background-color: $work;
+    }
+    &--play {
+        background-color: $play;
+    }
+    &--study {
+        background-color: $study;
+    }
+    &--exercise {
+        background-color: $exercise;
+    }
+    &--social {
+        background-color: $social;
+    }
+    &--self-care {
+        background-color: $self-care;
+    }
+
+    &__bg {
+        height: 4.5rem;
+        background-repeat: no-repeat;
+        background-position: 90% -10px;
+    }
+
+    &__content {
+        width: 100%;
+        height: 20rem;
+        padding: 3.2rem;
+        border-radius: $radius;
+        background-color: $bg-card;
+        cursor: pointer;
+        transition: background-color .2s;
+
+        &:hover {
+            background-color: #33397a;
+        }
+
+        &__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &__title {
+                font-size: 1.8rem;
+                font-weight: 500;
+                color: $white;
+            }
+
+            &__btn {
+                &:hover img {
+                    filter: brightness(0) invert(1)
+                }
+            }
+        }
+
+        &__detail {
+            margin-top: 2.4rem;
+
+            &__current {
+                font-size: 5.6rem;
+                font-weight: 300;
+                color: $white;
+            }
+
+            &__previous {
+                margin-top: .8rem;
+                font-size: 1.5rem;
+                font-weight: 400;
+                color: $pale-blue;
+            }
+        }
+    }
+}
