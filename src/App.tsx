@@ -11,10 +11,19 @@ import './App.scss'
 
 const App = () => { 
   const [data, setData] = useState<dataType[]>([])
-  const [activeTimeframe, setActiveTimeframe] = useState<timeframeType>('weekly')
+  const localStorageActiveTimeframe = localStorage.getItem('activeTimeframe')
+  const activeTimeframeInitialState = 
+    localStorageActiveTimeframe !== undefined 
+    && localStorageActiveTimeframe === 'daily' 
+    || localStorageActiveTimeframe === 'weekly' 
+    || localStorageActiveTimeframe === 'monthly'
+    ? localStorageActiveTimeframe
+    : 'weekly'
+  const [activeTimeframe, setActiveTimeframe] = useState<timeframeType>(activeTimeframeInitialState)
 
   const handleTimeframeChange = (activeTimeframe: timeframeType) => {
     setActiveTimeframe(activeTimeframe)
+    localStorage.setItem('activeTimeframe', activeTimeframe)
   }
 
   useEffect(() => {
