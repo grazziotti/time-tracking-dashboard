@@ -2,21 +2,42 @@
 
 .profile {
     max-width: 26.5rem;
+    max-height: 52rem;
     position: relative;
     background-color: $bg-card;
     border-radius: $radius;
+
+    @include respond(tablet) {
+        max-width: none;
+        width: 100%;
+    }
 
     &__intro {
         padding: 3.2rem 2.8rem 8rem;
         background-color: $bg-profile;
         border-radius: $radius;
 
+        @include respond(tablet) {
+            display: flex;
+            align-items: center;
+            max-height: 14.8rem;
+            padding: 3.2rem;
+        }
+
         &__avatar {
-            width: 8rem;
-            height: 8rem;
             margin-bottom: 4rem;
-            border: 3px solid $white;
-            border-radius: 50%;
+
+            @include respond(tablet) {
+                margin-bottom: 0;
+                margin-right: 2.4rem;
+            }
+
+            img {
+                width: 8rem;
+                height: 8rem;
+                border: 3px solid $white;
+                border-radius: 50%;
+            }
         }
 
         &__span {
@@ -30,17 +51,37 @@
             font-size: 4rem;
             font-weight: 300;
             color: $white;
+
+            @include respond(tablet) {
+                font-size: 2.4rem;
+            }
         }
     }
 
     &__nav {
         padding: 2.8rem 3.6rem 3.6rem 3.6rem;
 
+        @include respond(tablet) {
+            padding: 2.5rem 4rem;
+        }
+
+        @media only screen and (max-width: 350px) {
+            padding: 2.5rem .8rem;
+        }
+
         &__list {
             display: flex;
             flex-direction: column;
             gap: 2rem;
-            
+
+            @include respond(tablet) {
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            @include respond(mobile) {
+               justify-content: space-between;
+            }
         }
 
         &__link {
@@ -58,5 +99,4 @@
             color: $white;
         }
     }
-    
 }

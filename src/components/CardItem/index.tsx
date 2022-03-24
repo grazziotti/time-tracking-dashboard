@@ -10,13 +10,11 @@ type Props = {
 }
 
 export const CardItem = ({ title, timeframes, activeTimeframe }: Props) => {
-    title = title.toLowerCase().replace(' ', '-')
-
     return (
-        <div className={`card card--${title}`}>
+        <div className={`card card--${title.toLowerCase().replace(' ', '-')}`}>
             <div 
                 className="card__bg" 
-                style={{backgroundImage: `url(./images/icon-${title}.svg)`}}
+                style={{backgroundImage: `url(./images/icon-${title.toLowerCase().replace(' ', '-')}.svg)`}}
             ></div>
             <div className="card__content">
                 <div className="card__content__header">

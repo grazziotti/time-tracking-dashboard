@@ -1,7 +1,23 @@
+@use '../../styles/styles' as *;
+
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.8rem;
     flex: 1;
     margin-left: 3rem;
+
+    @include respond(laptop) {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.8rem;
+    }
+
+    @include respond(tablet) {
+        margin-left: 0;
+        margin-top: 2.4rem;
+    }
+
+    @include respond(mobile) {
+        grid-template-columns: 1fr;
+    }
 }
