@@ -12,7 +12,6 @@
 
 html {
     font-size: 62.5%;
-    overflow-y: scroll;
 }
 
 body {
@@ -70,4 +69,22 @@ input {
     @include respond(tablet) {
         flex-direction: column;
     }
+}
+
+[data-anime] {
+    opacity: 0;
+    transition: .6s;
+}
+
+[data-anime="left"] {
+    transform: translateX(-3rem);
+}
+
+[data-anime="right"] {
+    transform: translateX(3rem);
+}
+
+[data-anime].animate {
+    opacity: 1;
+    transform: translate(0, 0);
 }

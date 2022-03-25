@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { timeframeType } from '../../types/timeframeType';
 
 import './styles.scss'
@@ -16,8 +16,20 @@ export const ProfileCard = ({ activeTimeframe, onTimeframeChange }: Props) => {
 
     const checkActiveTimeframe = (s: string) => activeTimeframe === s ? 'active' : ''
 
+    const [animate, setAnimate] = useState('')
+
+    const animation = () => {
+        setTimeout(() => {
+            setAnimate('animate')
+        }, 1)
+    }
+
+    useEffect(() => {
+        animation()
+    }, [])
+    
     return (
-        <div className="profile">
+        <div className={`profile ${animate}`} data-anime="left">
             <div className="profile__intro"> 
                 <div className="profile__intro__avatar">
                     <img src="./images/image-jeremy.png" alt="avatar" />

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { dataType } from '../../types/dataType'
 import { timeframeType } from '../../types/timeframeType';
 import { CardItem } from '../CardItem'
@@ -10,8 +11,20 @@ type Props = {
 }
 
 export const CardList = ({ data, activeTimeframe }: Props) => {
+    const [animate, setAnimate] = useState('')
+
+    const animation = () => {
+        setTimeout(() => {
+            setAnimate('animate')
+        }, 1)
+    }
+
+    useEffect(() => {
+        animation()
+    }, [])
+
     return (
-        <div className="cards">
+        <div className={`cards ${animate}`} data-anime="right">
             {data.map((d, index) => (
                 <CardItem 
                     key={index}

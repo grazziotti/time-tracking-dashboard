@@ -18,7 +18,7 @@ export const CardItem = ({ title, timeframes, activeTimeframe }: Props) => {
             ></div>
             <div className="card__content">
                 <div className="card__content__header">
-                    <h4 className="card__content__header__title">{title}</h4>
+                    <p className="card__content__header__title">{title}</p>
                     <button className="card__content__header__btn">
                        <img src={'./images/icon-ellipsis.svg'} alt="Three points" />
                     </button>
